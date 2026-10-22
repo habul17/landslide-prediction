@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landslide History</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Dashboard</a>
+        <a href="history.html" class="active">History</a>
+    </nav>
+
+    <main>
+        <h1>History</h1>
+
+        <p id="message"></p>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Moisture</th>
+                        <th>Tilt</th>
+                        <th>Vibration</th>
+                        <th>Temp</th>
+                        <th>Humidity</th>
+                        <th>Risk</th>
+                    </tr>
+                </thead>
+                <tbody id="history-body"></tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="history.js"></script>
+</body>
+</html>

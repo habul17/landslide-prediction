@@ -1,0 +1,92 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    background: #f4f5f7;
+    color: #222;
+}
+
+nav {
+    display: flex;
+    gap: 16px;
+    padding: 12px 16px;
+    background: #2d3e50;
+}
+
+nav a {
+    color: #cfd8e3;
+    text-decoration: none;
+}
+
+nav a.active {
+    color: #fff;
+    font-weight: bold;
+}
+
+main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+.risk-box {
+    padding: 16px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    background: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 12px;
+    border-radius: 8px;
+    background: #fff;
+}
+
+.card .label {
+    font-size: 14px;
+    color: #666;
+}
+
+.card .value {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.updated {
+    color: #666;
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    white-space: nowrap;
+}
+
+.risk-low    { color: #1e8449; }
+.risk-medium { color: #b9770e; }
+.risk-high   { color: #c0392b; }

@@ -1,0 +1,20 @@
+{
+  "name": "landslide-prediction",
+  "version": "1.0.0",
+  "description": "Landslide risk check web app: HTML/CSS/JS frontend, Express REST API, MySQL",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "simulate": "node simulate.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "dotenv": "^18.0.8",
+    "express": "^5.3.0",
+    "mysql2": "^3.24.6"
+  }
+}

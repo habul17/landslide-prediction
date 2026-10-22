@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landslide Monitor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="active">Dashboard</a>
+        <a href="history.html">History</a>
+    </nav>
+
+    <main>
+        <h1>Landslide Monitor</h1>
+
+        <p id="message"></p>
+
+        <div id="risk" class="risk-box">Risk: --</div>
+
+        <div class="cards">
+            <div class="card">
+                <span class="label">Soil moisture</span>
+                <span class="value" id="moisture">--</span>
+            </div>
+            <div class="card">
+                <span class="label">Tilt (slope sensor)</span>
+                <span class="value" id="tilt">--</span>
+            </div>
+            <div class="card">
+                <span class="label">Vibration</span>
+                <span class="value" id="vibration">--</span>
+            </div>
+            <div class="card">
+                <span class="label">Temperature</span>
+                <span class="value" id="temperature">--</span>
+            </div>
+            <div class="card">
+                <span class="label">Humidity</span>
+                <span class="value" id="humidity">--</span>
+            </div>
+        </div>
+
+        <p class="updated">Last reading: <span id="time">--</span></p>
+    </main>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
