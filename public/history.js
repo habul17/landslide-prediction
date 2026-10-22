@@ -1,10 +1,14 @@
 const tbody = document.getElementById("history-body");
 const message = document.getElementById("message");
+const filter = document.getElementById("risk-filter");
 
 async function loadHistory() {
 
+    // "" means All, otherwise ask the API for one risk level only
+    const url = filter.value === "" ? "/api/readings" : "/api/readings?risk=" + filter.value;
+
     try {
-        const response = await fetch("/api/readings");
+        const response = await fetch(url);
 
         if (!response.ok) {
             message.textContent = "Could not load history";
@@ -47,4 +51,7 @@ function addCell(tr, text) {
     return td;
 }
 
+filter.addEventListener("change", loadHistory);
+
 loadHistory();
+setInterval(loadHistory, 20000); // refresh every 20 seconds

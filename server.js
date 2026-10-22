@@ -49,9 +49,24 @@ app.get("/api/readings/latest", async (req, res) => {
 
 
 // The last 100 readings, newest first, for the history page
+// Optional filter by risk: /api/readings?risk=High
 app.get("/api/readings", async (req, res) => {
 
-    const [rows] = await pool.query("SELECT * FROM readings ORDER BY entry_id DESC LIMIT 100");
+    const risk = req.query.risk;
+
+    if (risk === undefined) {
+        const [rows] = await pool.query("SELECT * FROM readings ORDER BY entry_id DESC LIMIT 100");
+        return res.json(rows);
+    }
+
+    if (!["Low", "Medium", "High"].includes(risk)) {
+        return res.status(400).json({ message: "risk must be Low, Medium or High" });
+    }
+
+    const [rows] = await pool.query(
+        "SELECT * FROM readings WHERE risk = ? ORDER BY entry_id DESC LIMIT 100",
+        [risk]
+    );
 
     res.json(rows);
 
@@ -67,7 +82,12 @@ app.use((err, req, res, next) => {
 
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () => {
+app.listen(PORT, (err) => {
+    if (err) {
+        console.error("Could not start server:", err.message); // for example, the port is already in use
+        process.exit(1);
+    }
+
     console.log(`Server running on http://localhost:${PORT}`);
 
     syncReadings();                   // once at start

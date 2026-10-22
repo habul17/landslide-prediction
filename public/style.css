@@ -70,6 +70,17 @@ main {
     color: #666;
 }
 
+.filter {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+select {
+    padding: 6px;
+    font-size: 16px;
+}
+
 .table-wrap {
     overflow-x: auto;
 }

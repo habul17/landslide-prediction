@@ -22,10 +22,11 @@ Sensors -> board with WiFi -> ThingSpeak -> Express backend (checks every 20 s)
 
 ## API
 
-| Method | Route                  | What it does                         |
-| ------ | ---------------------- | ------------------------------------ |
-| GET    | `/api/readings/latest` | The newest reading and its risk      |
-| GET    | `/api/readings`        | The last 100 readings, newest first  |
+| Method | Route                     | What it does                                        |
+| ------ | ------------------------- | --------------------------------------------------- |
+| GET    | `/api/readings/latest`    | The newest reading and its risk                     |
+| GET    | `/api/readings`           | The last 100 readings, newest first                 |
+| GET    | `/api/readings?risk=High` | Only readings with that risk (Low, Medium or High)  |
 
 ## Run it locally
 
